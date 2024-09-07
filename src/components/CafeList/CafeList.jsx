@@ -1,12 +1,11 @@
 import "./CafeList.css";
 import Cafe from "../Cafe/Cafe";
+import React from "react";
 
-function CafeList() {
+function CafeList(cafes) {
   return (
-    <div className="div cafe-list">
-      <Cafe />
-      <Cafe />
-      <Cafe />
+    <div className="cafe-list">
+      { cafes.map( cafe => <Cafe cafe={cafe} key={cafe.title} />)}
     </div>
   );
 }
